@@ -11,6 +11,8 @@ namespace ProjetoFinalWEBMVC.Controllers {
         }
 
         public IActionResult Index() {
+            ViewData["Index"] = "Home teste ismael";
+            ViewData["Email"] = "maelfons31@gmail.com";
             return View();
         }
 
