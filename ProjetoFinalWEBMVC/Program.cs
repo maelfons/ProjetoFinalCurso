@@ -1,4 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using ProjetoFinalWEBMVC.Models;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<ProjetoFinalWEBMVCContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ProjetoFinalWEBMVCContext") ?? throw new InvalidOperationException("Connection string 'ProjetoFinalWEBMVCContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
